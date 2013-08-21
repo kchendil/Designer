@@ -23,7 +23,7 @@
   "groupings": {
   },
   "recipes": {
-    "designer::default": "Installs NetIQ IDM Installer"
+    "designer::default": "Installs NetIQ IDM Designer"
   },
-  "version": "0.0.1"
+  "version": "0.0.2"
 }

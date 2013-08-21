@@ -15,7 +15,8 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-# default tomcat attributes
+
+# default designer attributes
 
 default['designer']['designer_install_loc'] = "/opt/novell/idm/Designer/"
 default['designer']['designer_locale'] = "en"
