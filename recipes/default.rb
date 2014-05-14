@@ -23,6 +23,8 @@ designer_build_loc=node['designer']['designer_build_loc']
 jre_loc=node['designer']['jre_loc']
 download_build=node['designer']['download_build']
 
+if download_build == "yes"
+
 execute "Download Desginer" do
   command " wget #{designer_build_loc_url} -O /tmp/designer_linux.tar.gz"
   creates "/tmp/designer_linux.tar.gz"
@@ -35,6 +37,8 @@ execute "Unzip Desginer" do
    creates "/home/vagrant/IDM402AE/test/products/Designer/install"
   not_if { ::File.exists?("/home/vagrant/IDM402AE/test/products/Designer/install")}
   action :run
+end
+
 end
 
 template "/tmp/designer_install.properties" do
