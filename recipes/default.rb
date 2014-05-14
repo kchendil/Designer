@@ -17,11 +17,23 @@
 # limitations under the License.
 
 designer_install_loc=node['designer']['designer_install_loc']
+designer_build_loc_url=node['designer']['designer_build_loc_url']
 designer_locale=node['designer']['designer_locale']
 designer_build_loc=node['designer']['designer_build_loc']
 jre_loc=node['designer']['jre_loc']
+download_build=node['designer']['download_build']
 
+execute "Download Desginer" do
+  command " wget #{designer_build_loc_url} -O /tmp/designer_linux.tar.gz"
+  creates "/tmp/designer_linux.tar.gz"
+  not_if { ::File.exists?("/tmp/designer_linux.tar.gz")}
+  action :run
+end
 
+execute "Unzip Desginer" do
+  command " mkdir -p /home/vagrant/IDM402AE/test/products/Designer/; tar-zxvf /tmp/designer_linux.tar.gz -C /home/vagrant/IDM402AE/test/products/Designer/"
+  action :run
+end
 
 template "/tmp/designer_install.properties" do
   source "designer_install.properties.erb"
