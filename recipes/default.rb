@@ -45,9 +45,7 @@ end
 
 execute "Install Desginer" do
   command " \"#{designer_build_loc}\" -DIA_USER_JRE_HOME=\"#{jre_loc}\" -i silent -f \"/tmp/designer_install.properties\" "
-  creates "/opt/novell/idm/Designer/Designer"
-  not_if { ::File.exists?("/opt/novell/idm/Designer/Designer")}
-  action :run
+   action :run
 end
 
 
