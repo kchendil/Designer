@@ -31,7 +31,7 @@ execute "Download Desginer" do
 end
 
 execute "Unzip Desginer" do
-  command " mkdir -p /home/vagrant/IDM402AE/test/products/Designer/; tar -zxvf /tmp/designer_linux.tar.gz -C /home/vagrant/IDM402AE/test/products/Designer/; mv /home/vagrant/IDM402AE/test/products/Designer/designer_install/* /home/vagrant/IDM402AE/test/products/Designer/"
+  command " mkdir -p /home/vagrant/IDM402AE/test/products/Designer/; tar -zxvf /tmp/designer_linux.tar.gz -C /home/vagrant/IDM402AE/test/products/Designer/; mv /home/vagrant/IDM402AE/test/products/Designer/designer_install/* /home/vagrant/IDM402AE/test/products/Designer/;chmod +x /home/vagrant/IDM402AE/test/products/Designer/install"
    creates "/home/vagrant/IDM402AE/test/products/Designer/install"
   not_if { ::File.exists?("/home/vagrant/IDM402AE/test/products/Designer/install")}
   action :run
